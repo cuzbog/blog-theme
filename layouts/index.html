@@ -14,11 +14,13 @@
         {{ .Content }}
       </div>
 
-      <div class="landing__links">
-        {{ range .Site.Params.quietLinks }}
-          <a href="{{ .href }}" class="link-quiet"{{ if .external }} rel="noopener"{{ end }}>{{ .label }}</a>
-        {{ end }}
-      </div>
+      {{ with .Site.Params.quietLinks }}
+        <div class="landing__links">
+          {{ range . }}
+            <a href="{{ .href }}" class="link-quiet"{{ if .external }} rel="noopener"{{ end }}>{{ .label }}</a>
+          {{ end }}
+        </div>
+      {{ end }}
     </div>
   </div>
 </main>
