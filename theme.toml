@@ -1,0 +1,11 @@
+name = "Personal Page System"
+license = "MIT"
+description = "Bogdan Cuza's personal-page-system: a no-scroll visit-card landing plus quiet subpages. Charter serif + DM Mono, white background, four category-underline accents."
+homepage = "https://bgdn.eu"
+tags = ["personal", "minimal", "portfolio", "single-page"]
+features = ["responsive", "no-javascript"]
+min_version = "0.110.0"
+
+[author]
+name = "Bogdan Cuza"
+homepage = "https://bgdn.eu"

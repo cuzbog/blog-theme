@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main class="shell-page">
+  {{ partial "back-link.html" . }}
+  <div class="shell-page__inner">
+    <h2 class="section-label">Publications</h2>
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+    {{ range .Params.publications }}
+      <div class="pub">
+        <p class="pub__cite">{{ .citation | safeHTML }}</p>
+        {{ with .doi }}<a class="pub__doi" href="{{ . }}" rel="noopener">{{ . }}</a>{{ end }}
+      </div>
+    {{ end }}
+    {{ with .Params.note }}<p class="note">{{ . }}</p>{{ end }}
+  </div>
+</main>
+{{ end }}

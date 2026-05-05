@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main class="shell-page">
+  {{ partial "back-link.html" . }}
+  <div class="shell-page__inner">
+    {{ with .Params.sectionLabel | default .Title }}
+      <h2 class="section-label">{{ . }}</h2>
+    {{ end }}
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+</main>
+{{ end }}

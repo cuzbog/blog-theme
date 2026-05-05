@@ -1,0 +1,37 @@
+{{ define "main" }}
+<main class="shell-page">
+  {{ partial "back-link.html" . }}
+  <div class="shell-page__inner">
+    <header class="cv-head">
+      <h1 class="cv-head__name">{{ .Params.name | default .Site.Params.author | default .Site.Title }}</h1>
+      <p class="cv-head__sub">{{ .Params.subtitle | default "Curriculum Vitae" }}</p>
+    </header>
+
+    {{ range .Params.sections }}
+      <section class="cv-section">
+        <div class="cv-section__label">{{ .label }}</div>
+
+        {{ if eq .kind "tags" }}
+          <div class="tag-row">
+            {{ range .items }}<span class="tag">{{ . }}</span>{{ end }}
+          </div>
+        {{ else if eq .kind "line" }}
+          <p class="cv-line">{{ .text }}</p>
+        {{ else }}
+          {{ range .entries }}
+            <div class="cv-entry">
+              <div class="cv-entry__head">
+                <span class="cv-entry__title">{{ .title }}</span>
+                {{ with .date }}<span class="cv-entry__date">{{ . }}</span>{{ end }}
+              </div>
+              {{ with .sub }}<p class="cv-entry__sub">{{ . }}</p>{{ end }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </section>
+    {{ end }}
+
+    {{ with .Content }}<div class="prose" style="margin-top: var(--space-8);">{{ . }}</div>{{ end }}
+  </div>
+</main>
+{{ end }}

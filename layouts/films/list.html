@@ -1,0 +1,21 @@
+{{ define "main" }}
+<main class="shell-page">
+  {{ partial "back-link.html" . }}
+  <div class="shell-page__inner">
+    <h2 class="section-label">Films</h2>
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+    {{ range .Pages.ByDate.Reverse }}
+      <article class="film-card">
+        {{ with .Params.image }}
+          <div class="film-card__media">
+            <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+          </div>
+        {{ end }}
+        <h3 class="film-card__title">{{ .Title }}</h3>
+        {{ with .Params.meta }}<p class="film-card__meta">{{ . }}</p>{{ end }}
+        {{ with .Params.summary }}<p class="film-card__desc">{{ . }}</p>{{ end }}
+      </article>
+    {{ end }}
+  </div>
+</main>
+{{ end }}

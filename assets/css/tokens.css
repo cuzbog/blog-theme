@@ -1,0 +1,66 @@
+/* ============================================================
+   personal-page-system — design tokens
+   Ported from project/colors_and_type.css
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&display=swap');
+
+:root {
+  /* Surfaces */
+  --color-bg:         #FFFFFF;
+  --color-bg-muted:   #FAFAFA;
+
+  /* Ink scale */
+  --color-ink:        #1a1a1a;
+  --color-ink-65:     rgba(0, 0, 0, 0.65);
+  --color-ink-45:     rgba(0, 0, 0, 0.45);
+  --color-ink-35:     rgba(0, 0, 0, 0.35);
+  --color-ink-25:     rgba(0, 0, 0, 0.25);
+  --color-ink-ghost:  rgba(0, 0, 0, 0.12);
+
+  /* Category underline accents */
+  --color-film:       #B83A3A;
+  --color-writing:    #C46B2A;
+  --color-software:   #3A4F5C;
+  --color-research:   #1A4F82;
+
+  /* Borders */
+  --color-border:        rgba(0, 0, 0, 0.06);
+  --color-border-faint:  rgba(0, 0, 0, 0.04);
+
+  /* Typography */
+  --font-serif: 'Charter', 'Charter ITC', 'Georgia', serif;
+  --font-mono:  'DM Mono', 'Courier New', monospace;
+
+  --text-display: clamp(20px, 2.8vw, 28px);
+  --text-title:   22px;
+  --text-body:    16px;
+  --text-body-lg: 19px;
+  --text-small:   12px;
+  --text-tiny:    11px;
+  --text-label:   10px;
+
+  --weight-light:   300;
+  --weight-regular: 400;
+  --weight-medium:  500;
+
+  --leading-tight:  1.3;
+  --leading-normal: 1.65;
+  --leading-loose:  1.8;
+
+  /* Spacing */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  36px;
+  --space-8:  48px;
+  --space-9:  64px;
+  --space-10: 96px;
+
+  /* Radii */
+  --radius-none: 0px;
+  --radius-sm:   2px;
+}

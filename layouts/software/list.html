@@ -1,0 +1,20 @@
+{{ define "main" }}
+<main class="shell-page">
+  {{ partial "back-link.html" . }}
+  <div class="shell-page__inner">
+    <h2 class="section-label">Software</h2>
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+    {{ $pages := .Pages.ByDate.Reverse }}
+    {{ range $i, $p := $pages }}
+      {{ if $i }}<hr class="divider">{{ end }}
+      <div class="list-row">
+        <div class="list-row__head">
+          <h3 class="list-row__title list-row__title--mono">{{ $p.Title }}</h3>
+          {{ with $p.Params.meta }}<span class="list-row__date">{{ . }}</span>{{ end }}
+        </div>
+        {{ with $p.Params.summary }}<p class="list-row__desc">{{ . }}</p>{{ end }}
+      </div>
+    {{ end }}
+  </div>
+</main>
+{{ end }}

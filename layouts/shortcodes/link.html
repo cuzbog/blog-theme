@@ -1,0 +1,12 @@
+{{- /*
+  Inline category-coloured underline link.
+  Usage: {{< link to="/films/" color="film" >}}films{{< /link >}}
+  Valid colors: film, writing, software, research.
+*/ -}}
+{{- $to := .Get "to" -}}
+{{- $color := .Get "color" | default "research" -}}
+{{- $valid := slice "film" "writing" "software" "research" -}}
+{{- if not (in $valid $color) -}}
+  {{- errorf "link shortcode: invalid color %q (use film|writing|software|research)" $color -}}
+{{- end -}}
+<a href="{{ $to | relURL }}" class="link-inline link-inline--{{ $color }}">{{ .Inner }}</a>

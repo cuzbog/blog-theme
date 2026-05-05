@@ -1,0 +1,25 @@
+{{ define "main" }}
+<main class="shell-home">
+  <div class="landing">
+    <div class="landing__photo">
+      {{ with .Site.Params.profilePhoto }}
+        <img src="{{ . | relURL }}" alt="{{ $.Site.Params.author | default $.Site.Title }}">
+      {{ else }}
+        <span class="landing__photo-placeholder">photo</span>
+      {{ end }}
+    </div>
+
+    <div class="landing__prose">
+      <div class="landing__intro">
+        {{ .Content }}
+      </div>
+
+      <div class="landing__links">
+        {{ range .Site.Params.quietLinks }}
+          <a href="{{ .href }}" class="link-quiet"{{ if .external }} rel="noopener"{{ end }}>{{ .label }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</main>
+{{ end }}
